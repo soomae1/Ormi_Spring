@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3 th:text="${test}">인사문구</h3>
+
+<div th:object="${user}">
+    <p>이름 : <span th:text="*{username}"></span></p>
+    <p>이메일 : <span th:text="*{email}"></span></p>
+
+    <p><a th:if="${user.admin}">관리자 메뉴</a></p>
+    <p><a th:unless="${user.admin}">일반 사용자 메뉴</a></p>
+</div>
+</body>
+</html>
